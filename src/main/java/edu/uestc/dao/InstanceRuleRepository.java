@@ -15,6 +15,6 @@ import java.util.List;
 * @create 2020/3/12
 **/
 public interface InstanceRuleRepository extends JpaRepository<InstanceRule,Long> {
-    @Query(value="SELECT * FROM instance_rule where rule_content LIKE %:keyword",nativeQuery = true)
+    @Query(value="SELECT * FROM instance_rule where rule_content LIKE %?1%",nativeQuery = true)
     List<InstanceRule> query(@Param("keyword")String keyword);
 }
