@@ -55,6 +55,20 @@
                     </div>
                 </div>
         </form>
+
+        <form name="queryRule" class="ui large form" method="get" action="#" th:action="@{/admin/instance/query}">
+            <h3>输入关键词进行查询</h3>
+            <div class="inline fields">
+                <div class="field">
+                    <input type="text" name="keyword" placeholder="关键词,例如函数">
+                </div>
+            </div>
+            <div class="inline fields">
+                <div class="field">
+                    <button type="button" onclick="document.forms['queryRule'].submit()" class="ui mini teal basic submit button">查询</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 </body>

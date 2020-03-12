@@ -1,11 +1,13 @@
 package edu.uestc.Utils;
 
 
+import edu.uestc.po.InstanceRule;
 import edu.uestc.po.Request;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,9 +46,32 @@ public class DataBase {
         return r;
     }
 
+    public List<InstanceRule> queryInstanceRule(String keyword) {
+        List<InstanceRule> list = new ArrayList<>();
+        String sql = String.format("SELECT * FROM instance_rule where rule_content LIKE %s;","\'%" + keyword + "%\'");
+        try {
+            ResultSet rs = con.createStatement().executeQuery(sql);
+            while (rs.next()){
+                InstanceRule instanceRule  = new InstanceRule(
+                        rs.getInt("rule_id"),
+                        rs.getString("rule_name"),
+                        rs.getString("rule_content"),
+                        rs.getInt("type")
+                );
+                list.add(instanceRule);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     public static void main(String[] args) throws Exception{
         DataBase dataBase = DataBase.getInstance();
         System.out.println(1);
         dataBase.queryRequest("1",1,1);
+        List<InstanceRule> list = dataBase.queryInstanceRule("函数");
+        System.out.println(list.size());
+        System.out.println(list);
     }
 }
