@@ -36,7 +36,6 @@ public class InstanceRuleController {
                 return "admin/rule";
             }
             List<InstanceRule> instanceRuleList = ruleService.query(keyword);
-            System.out.println(instanceRuleList);
             model.addAttribute("instanceRuleList", instanceRuleList);
             return "admin/queryRuleResult";
         }
