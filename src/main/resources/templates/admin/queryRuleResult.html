@@ -56,7 +56,7 @@
         <div class="ui top attached segment">
            <tr th:each="instanceRule : ${instanceRuleList}">
              <span th:text="${instanceRule.ruleId}"></span>
-            <p th:text="${instanceRule.ruleName}"></p>
+            <span th:text="${instanceRule.ruleName}"></span>
             <p th:text="${instanceRule.ruleContent}"></p>
              <br>
            </tr>
