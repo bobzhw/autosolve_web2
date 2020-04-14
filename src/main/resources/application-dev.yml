@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.9:3306/autosolve_test?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://192.168.1.9:3306/question_database?useUnicode=true&characterEncoding=utf-8
 #    url: jdbc:mysql://aifuture.uestc.cn:3306/autosolve_test?useSSL=false&useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
     username: root
     password: woaizxl

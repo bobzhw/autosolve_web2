@@ -1,28 +1,50 @@
 package edu.uestc.po;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "t_question")
+@Table(name = "shs_question")
 public class Question {
 
     @Id
+    @Column(name="questionid")
     private String id;
     private String area;
-    private int category;
-    private int questionNum;
-    private int questionType;
-    private Byte solved;
+    @Column(name="questionType")
+    private String questionType;
     private String stem;
+    @Column(name="subStem")
     private String subStem;
     private String type;
     private String year;
     private String stem2;
+    @Column(name="subStem2")
     private String subStem2;
     private String options;
+    private String config;
+    private int category;
+    @Column(name="table_info")
+    private String table_info;
+
+    public String getConfig() {
+        return config;
+    }
+
+    public void setConfig(String config) {
+        this.config = config;
+    }
+
+    public String getTable_info() {
+        return table_info;
+    }
+
+    public void setTable_info(String table_info) {
+        this.table_info = table_info;
+    }
 
     public String getOptions() {
         return options;
@@ -64,36 +86,16 @@ public class Question {
         this.area = area;
     }
 
-    public int getCategory() {
-        return category;
-    }
 
-    public void setCategory(int category) {
-        this.category = category;
-    }
 
-    public int getQuestionNum() {
-        return questionNum;
-    }
 
-    public void setQuestionNum(int questionNum) {
-        this.questionNum = questionNum;
-    }
 
-    public int getQuestionType() {
+    public String getQuestionType() {
         return questionType;
     }
 
-    public void setQuestionType(int questionType) {
+    public void setQuestionType(String questionType) {
         this.questionType = questionType;
-    }
-
-    public Byte getSolved() {
-        return solved;
-    }
-
-    public void setSolved(Byte solved) {
-        this.solved = solved;
     }
 
     public String getStem() {
@@ -133,10 +135,7 @@ public class Question {
         return "Question{" +
                 "id=" + id +
                 ", area='" + area + '\'' +
-                ", category=" + category +
-                ", questionNum=" + questionNum +
                 ", questionType=" + questionType +
-                ", solved=" + solved +
                 ", stem='" + stem + '\'' +
                 ", subStem='" + subStem + '\'' +
                 ", type='" + type + '\'' +
@@ -147,11 +146,5 @@ public class Question {
     public Question() {
     }
 
-    public Question(String id,String area,int category,String stem,String subStem){
-        this.id=id;
-        this.area=area;
-        this.category=category;
-        this.stem=stem;
-        this.subStem=subStem;
-    }
+
 }

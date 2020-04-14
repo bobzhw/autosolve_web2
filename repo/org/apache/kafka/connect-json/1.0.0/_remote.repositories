@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Dec 15 22:47:34 CST 2019
+connect-json-1.0.0.jar>nexus-pentaho=
+connect-json-1.0.0.pom>nexus-pentaho=
